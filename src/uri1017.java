@@ -1,33 +1,39 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 /*
- * QUESTÃO URI 1007:
-Leia quatro valores inteiros A, B, C e D. A seguir, calcule e mostre a diferença do produto de A e B pelo produto de
-C e D segundo a fórmula: DIFERENCA = (A * B - C * D).
+* QUESTÃO URI 1017:
+Joãozinho quer calcular e mostrar a quantidade de litros de combustível gastos em uma viagem,
+ao utilizar um automóvel que faz 12 KM/L. Para isso, ele gostaria que você o auxiliasse através de um simples programa.
+Para efetuar o cálculo, deve-se fornecer o tempo gasto na viagem (em horas) e a velocidade média durante
+a mesma (em km/h). Assim, pode-se obter distância percorrida e, em seguida, calcular quantos litros seriam necessários.
+Mostre o valor com 3 casas decimais após o ponto.
 
- * ENTRADA:
-O arquivo de entrada contém 4 valores inteiros.
+* ENTRADA:
+O arquivo de entrada contém dois inteiros. O primeiro é o tempo gasto na viagem (em horas) e o segundo é a velocidade
+média durante a mesma (em km/h).
 
- * SAÍDA:
-Imprima a mensagem DIFERENCA com todas as letras maiúsculas, conforme exemplo abaixo, com um espaço em branco
-antes e depois da igualdade.
+* SAÍDA:
+Imprima a quantidade de litros necessária para realizar a viagem, com três dígitos após o ponto decimal
  */
 
-public class uri1007 {
+public class uri1017 {
 
     public static void main(String[] args) {
 
+        Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        int A, B, C, D, DIF;
+        int tempoGasto, velocidadeMedia;
+        double litros;
 
-        A = sc.nextInt();
-        B = sc.nextInt();
-        C = sc.nextInt();
-        D = sc.nextInt();
-        DIF = (A * B - C * D);
+        tempoGasto = sc.nextInt();
+        velocidadeMedia = sc.nextInt();
 
-        System.out.println("DIFERENÇA = " + DIF);
+        litros = tempoGasto * velocidadeMedia;
+        litros = litros / 12;
+
+        System.out.printf("%.3f\n", litros);
 
         sc.close();
 
